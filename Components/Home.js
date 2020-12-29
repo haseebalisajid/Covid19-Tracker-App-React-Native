@@ -18,7 +18,7 @@ export default function Home() {
     fetch("https://covid-19-data.p.rapidapi.com/totals", {
       method: "GET",
       headers: {
-        "x-rapidapi-key": "bb6237623dmsh0491c9421046508p1b70b3jsn03d58281fe76",
+        "x-rapidapi-key": "Your API Key",
         "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
       },
     })
