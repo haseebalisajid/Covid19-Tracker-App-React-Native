@@ -62,7 +62,7 @@ export default function Specific({navigation,route}) {
           method: "GET",
           headers: {
             "x-rapidapi-key":
-              "bb6237623dmsh0491c9421046508p1b70b3jsn03d58281fe76",
+              "Your API Key",
             "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
           },
         }
@@ -90,7 +90,7 @@ export default function Specific({navigation,route}) {
         {
           method: "GET",
           headers: {
-            "x-rapidapi-key": "bb6237623dmsh0491c9421046508p1b70b3jsn03d58281fe76",
+            "x-rapidapi-key": "Your API Key",
             "x-rapidapi-host": "world-population.p.rapidapi.com",
           },
         }
