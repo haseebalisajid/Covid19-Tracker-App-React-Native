@@ -35,7 +35,7 @@ export default function Home() {
     fetch("https://world-population.p.rapidapi.com/worldpopulation", {
       method: "GET",
       headers: {
-        "x-rapidapi-key": "bb6237623dmsh0491c9421046508p1b70b3jsn03d58281fe76",
+        "x-rapidapi-key": "Your API Key",
         "x-rapidapi-host": "world-population.p.rapidapi.com",
       },
     })
