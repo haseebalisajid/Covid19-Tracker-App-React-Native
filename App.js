@@ -1,21 +1,86 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { Icon } from "native-base";
+import HomeStack from './screens/HomeStack'
+import CountriesStack from './screens/CountriesStack'
+import SavedStack from './screens/SavedStack'
+import DrawerHeader from './Components/DrawerHeader';
+import AboutStack from './screens/AboutStack'
+
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <NavigationContainer>
+      <Drawer.Navigator drawerContent={(props) => <DrawerHeader {...props} />}>
+        <Drawer.Screen
+          name="World Stats"
+          component={HomeStack}
+          options={{
+            drawerIcon: ({ focused, color, size }) => (
+              <Icon
+                type="Fontisto"
+                name="world-o"
+                style={{
+                  fontSize: size,
+                  color: color,
+                }}
+              />
+            ),
+          }}
+        />
+        <Drawer.Screen
+          name="Countries"
+          component={CountriesStack}
+          options={{
+            drawerIcon: ({ focused, color, size }) => (
+              <Icon
+                type="Ionicons"
+                name="flag-outline"
+                style={{
+                  fontSize: size,
+                  color: color,
+                }}
+              />
+            ),
+          }}
+        />
+        <Drawer.Screen
+          name="Saved"
+          component={SavedStack}
+          options={{
+            title: "Saved Countries",
+            drawerIcon: ({ focused, color, size }) => (
+              <Icon
+                type="FontAwesome"
+                name="bookmark-o"
+                style={{
+                  fontSize: size,
+                  color: color,
+                }}
+              />
+            ),
+          }}
+        />
+        <Drawer.Screen
+          name="About Me"
+          component={AboutStack}
+          options={{
+            title: "About Me",
+            drawerIcon: ({ focused, color, size }) => (
+              <Icon
+                type="FontAwesome"
+                name="user-o"
+                style={{
+                  fontSize: size,
+                  color: color,
+                }}
+              />
+            ),
+          }}
+        />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  ); 
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
